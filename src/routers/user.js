@@ -6,6 +6,10 @@ const { sendWelcomeEmail, sendCancellationEmail } = require('../emails/account')
 const router = new express.Router()
 const multer = require('multer')
 
+router.get('/', (req, res) => {
+    res.send('hi world')
+})
+
 //new users
 router.post('/users', async (req, res) => {
     const user = new User(req.body)
